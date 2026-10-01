@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Name | Personal Portfolio</title>
+
+<meta name="description"
+content="Personal portfolio showcasing skills, projects, education, certifications and professional journey.">
+
+<style>
+
+/* =========================================================
+   RESET & GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:#07111f;
+    color:#f8fafc;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1120px, 90%);
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+}
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+    --bg:#07111f;
+    --bg2:#0a1626;
+    --card:#0e1b2d;
+    --card2:#12243a;
+
+    --primary:#38bdf8;
+    --primary2:#7dd3fc;
+
+    --white:#f8fafc;
+    --text:#dbe5f0;
+    --muted:#8ea1b7;
+
+    --border:rgba(255,255,255,0.09);
+
+    --shadow:0 25px 80px rgba(0,0,0,0.28);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(7,17,31,0.78);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    height:74px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:-0.5px;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:26px;
+    align-items:center;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--text);
+    font-size:14px;
+    transition:.25s ease;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+
+    background:transparent;
+    border:1px solid var(--border);
+
+    color:white;
+
+    width:42px;
+    height:42px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding-top:100px;
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(56,189,248,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(56,189,248,.06),
+            transparent 30%
+        );
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        .8fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.small-label{
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(48px, 7vw, 82px);
+
+    line-height:.98;
+
+    letter-spacing:-4px;
+
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero h2{
+    font-size:clamp(22px,3vw,34px);
+
+    font-weight:500;
+
+    color:var(--text);
+
+    margin-bottom:22px;
+
+    max-width:720px;
+}
+
+.hero p{
+    color:var(--muted);
+
+    max-width:700px;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+
+    gap:13px;
+
+    flex-wrap:wrap;
+
+    margin-top:32px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+    min-height:48px;
+
+    padding:0 22px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.btn-primary{
+    background:var(--primary);
+
+    color:#04101b;
+}
+
+.btn-primary:hover{
+    background:var(--primary2);
+
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+
+    color:white;
+
+    background:rgba(255,255,255,.02);
+}
+
+.btn-outline:hover{
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   HERO CARD
+========================================================= */
+
+.hero-card{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+}
+
+.profile-circle{
+    width:150px;
+    height:150px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #38bdf8,
+            #0ea5e9
+        );
+
+    color:#04101b;
+
+    font-weight:900;
+
+    font-size:42px;
+
+    box-shadow:
+        0 0 55px rgba(56,189,248,.18);
+
+    margin-bottom:24px;
+}
+
+.hero-card h3{
+    font-size:25px;
+
+    margin-bottom:3px;
+}
+
+.hero-card p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.hero-stats{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:1px solid var(--border);
+}
+
+.hero-stats strong{
+    display:block;
+
+    color:var(--primary);
+
+    font-size:21px;
+}
+
+.hero-stats span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-head{
+    margin-bottom:55px;
+}
+
+.section-number{
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.section-head h2{
+    font-size:clamp(34px,5vw,50px);
+
+    line-height:1.05;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:10px;
+}
+
+.section-head p{
+    color:var(--muted);
+
+    font-size:15px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1.3fr .8fr;
+
+    gap:60px;
+}
+
+.about-text p{
+    color:var(--text);
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+}
+
+.about-text strong{
+    color:var(--primary);
+}
+
+.info-box{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.info-row{
+    padding:18px 22px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row small{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.info-row strong{
+    display:block;
+
+    color:white;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.dark-section{
+    background:#091523;
+}
+
+.skills-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(210px,1fr));
+
+    gap:18px;
+}
+
+.skill-card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:25px;
+
+    transition:.25s ease;
+}
+
+.skill-card:hover{
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(56,189,248,.5);
+
+    background:var(--card2);
+}
+
+.skill-icon{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(56,189,248,.1);
+
+    color:var(--primary);
+
+    font-size:17px;
+
+    font-weight:800;
+
+    margin-bottom:16px;
+}
+
+.skill-card h3{
+    font-size:18px;
+
+    margin-bottom:7px;
+}
+
+.skill-card p{
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(290px,1fr));
+
+    gap:24px;
+}
+
+.project-card{
+    overflow:hidden;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    transition:.25s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(56,189,248,.45);
+}
+
+.project-image{
+    height:190px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10253d,
+            #0b1727
+        );
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    overflow:hidden;
+}
+
+.project-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    font-size:20px;
+
+    margin-bottom:9px;
+}
+
+.project-content p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    margin-bottom:17px;
+}
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:18px;
+}
+
+.tag{
+    background:rgba(56,189,248,.08);
+
+    color:var(--primary);
+
+    padding:5px 10px;
+
+    border-radius:50px;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.project-buttons{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.project-buttons a{
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline{
+    max-width:850px;
+
+    border-left:1px solid var(--border);
+
+    margin-left:7px;
+}
+
+.timeline-item{
+    position:relative;
+
+    padding-left:35px;
+
+    padding-bottom:45px;
+}
+
+.timeline-item:last-child{
+    padding-bottom:0;
+}
+
+.timeline-item::before{
+    content:"";
+
+    position:absolute;
+
+    left:-6px;
+
+    top:4px;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:
+        0 0 0 5px rgba(56,189,248,.08);
+}
+
+.timeline-item small{
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.timeline-item h3{
+    font-size:21px;
+
+    margin:6px 0;
+}
+
+.timeline-item p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+/* =========================================================
+   CERTIFICATES
+========================================================= */
+
+.certificate-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.certificate-card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:24px;
+}
+
+.certificate-card h3{
+    font-size:18px;
+
+    margin-bottom:6px;
+}
+
+.certificate-card p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:15px;
+}
+
+.certificate-card a{
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume-box{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,189,248,.1),
+            rgba(255,255,255,.02)
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.resume-box h2{
+    font-size:clamp(26px,4vw,40px);
+
+    margin:7px 0;
+}
+
+.resume-box p{
+    color:var(--muted);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact .section-head{
+    max-width:700px;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-text{
+    color:var(--muted);
+
+    max-width:650px;
+
+    margin:0 auto 30px;
+}
+
+.contact-links{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.contact-links a{
+    padding:13px 20px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    color:var(--text);
+
+    font-size:13px;
+
+    transition:.25s ease;
+}
+
+.contact-links a:hover{
+    border-color:var(--primary);
+
+    color:var(--primary);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    border-top:1px solid var(--border);
+
+    background:#050b14;
+
+    padding:25px 0;
+}
+
+.footer-inner{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    align-items:center;
+}
+
+.footer-inner p,
+.footer-inner a{
+    color:#64748b;
+
+    font-size:12px;
+}
+
+.footer-inner a:hover{
+    color:var(--primary);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        max-width:450px;
+
+        margin:auto;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .resume-box{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:700px){
+
+    .nav{
+        height:68px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:68px;
+
+        left:0;
+        right:0;
+
+        background:#081321;
+
+        border-bottom:1px solid var(--border);
+
+        padding:22px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:17px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero{
+        padding-top:120px;
+
+        min-height:auto;
+
+        padding-bottom:80px;
+    }
+
+    .hero h1{
+        letter-spacing:-2.5px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    section{
+        padding:80px 0;
+    }
+
+    .resume-box{
+        padding:30px 25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+<div class="container nav">
+
+    <a href="#home" class="logo">
+        YOUR<span>NAME</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+    <div>
+
+        <div class="small-label">
+            PERSONAL PORTFOLIO
+        </div>
+
+        <h1>
+            Hi, I'm <span>Your Name</span>
+        </h1>
+
+        <h2>
+            Learning. Creating. Building My Professional Journey.
+        </h2>
+
+        <p>
+            Welcome to my personal portfolio. Explore my skills,
+            projects, education, certifications and the work I am
+            building along my professional journey.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                Explore My Work
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Let's Connect
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="profile-circle">
+            YN
+        </div>
+
+        <h3>
+            Your Name
+        </h3>
+
+        <p>
+            Personal Portfolio
+        </p>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>03+</strong>
+                <span>Skills</span>
+            </div>
+
+            <div>
+                <strong>04+</strong>
+                <span>Projects</span>
+            </div>
+
+            <div>
+                <strong>02+</strong>
+                <span>Certificates</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            01 — ABOUT
+        </div>
+
+        <h2>
+            A little about me
+        </h2>
+
+        <p>
+            Who I am, what I am learning and where I am heading.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                Hello! I'm <strong>Your Name</strong>, a motivated
+                learner interested in developing practical skills,
+                exploring technology and creating meaningful digital work.
+            </p>
+
+            <p>
+                I enjoy learning through practical projects instead of
+                only studying theory. This portfolio documents my work,
+                skills and professional growth.
+            </p>
+
+            <p>
+                As I continue learning new skills and exploring new
+                opportunities, this portfolio will continue to grow with me.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-row">
+
+                <small>Current Focus</small>
+
+                <strong>
+                    Learning & Building
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <small>Education</small>
+
+                <strong>
+                    B.Com
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <small>Based In</small>
+
+                <strong>
+                    India
+                </strong>
+
+            </div>
+
+            <div class="info-row">
+
+                <small>Open To</small>
+
+                <strong>
+                    Opportunities & Projects
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section class="dark-section" id="skills">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            02 — SKILLS
+        </div>
+
+        <h2>
+            Skills I'm building
+        </h2>
+
+        <p>
+            My current skills and areas of learning.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                SEO
+            </div>
+
+            <h3>
+                Search Engine Optimization
+            </h3>
+
+            <p>
+                Keyword research, on-page SEO, content strategy and
+                search optimization.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                ADS
+            </div>
+
+            <h3>
+                Digital Advertising
+            </h3>
+
+            <p>
+                Google Ads, Meta Ads, campaign structure and performance analysis.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                WEB
+            </div>
+
+            <h3>
+                Website & WordPress
+            </h3>
+
+            <p>
+                WordPress website management, page building and basic web skills.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                CRT
+            </div>
+
+            <h3>
+                Creative Tools
+            </h3>
+
+            <p>
+                Canva, visual content creation and digital design.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                ANA
+            </div>
+
+            <h3>
+                Analytics
+            </h3>
+
+            <p>
+                Google Analytics, Google Tag Manager and performance tracking.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                +
+            </div>
+
+            <h3>
+                Future Skills
+            </h3>
+
+            <p>
+                New skills and technologies will be added as I continue learning.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            03 — PROJECTS
+        </div>
+
+        <h2>
+            Selected work
+        </h2>
+
+        <p>
+            A collection of practical projects and experiments.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                Project Image
+            </div>
+
+            <div class="project-content">
+
+                <h3>
+                    Meta Ads Lead Generation
+                </h3>
+
+                <p>
+                    A practical lead generation campaign focused on
+                    audience targeting, campaign setup and performance analysis.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Meta Ads
+                    </span>
+
+                    <span class="tag">
+                        Lead Generation
+                    </span>
+
+                    <span class="tag">
+                        Analytics
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                    <a href="#">
+                        Project PDF →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                Project Image
+            </div>
+
+            <div class="project-content">
+
+                <h3>
+                    Google Ads Campaign
+                </h3>
+
+                <p>
+                    A practical Google Ads project covering campaign
+                    structure, keywords, targeting and optimization.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Google Ads
+                    </span>
+
+                    <span class="tag">
+                        PPC
+                    </span>
+
+                    <span class="tag">
+                        Campaign
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                    <a href="#">
+                        Project PDF →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                Project Image
+            </div>
+
+            <div class="project-content">
+
+                <h3>
+                    SEO Website Project
+                </h3>
+
+                <p>
+                    A practical SEO project focused on keyword research,
+                    on-page optimization and content planning.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        SEO
+                    </span>
+
+                    <span class="tag">
+                        Research
+                    </span>
+
+                    <span class="tag">
+                        Content
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                    <a href="#">
+                        Project PDF →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article class="project-card">
+
+            <div class="project-image">
+                Project Image
+            </div>
+
+            <div class="project-content">
+
+                <h3>
+                    Personal Website
+                </h3>
+
+                <p>
+                    A personal portfolio website designed to showcase my
+                    projects, skills and professional journey.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        GitHub Pages
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="dark-section" id="experience">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            04 — EXPERIENCE
+        </div>
+
+        <h2>
+            Professional journey
+        </h2>
+
+        <p>
+            Experience, internships, freelance work and practical learning.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <small>
+                CURRENT
+            </small>
+
+            <h3>
+                Skill Development & Practical Projects
+            </h3>
+
+            <p>
+                Building practical experience through digital projects,
+                campaigns, website work and continuous learning.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <small>
+                FUTURE
+            </small>
+
+            <h3>
+                New Professional Experiences
+            </h3>
+
+            <p>
+                Future internships, jobs, freelance projects and
+                professional experiences will be added here.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            05 — EDUCATION
+        </div>
+
+        <h2>
+            Academic background
+        </h2>
+
+        <p>
+            My educational journey and learning background.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <small>
+                DEGREE
+            </small>
+
+            <h3>
+                Bachelor of Commerce (B.Com)
+            </h3>
+
+            <p>
+                Bachelor of Commerce education background.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <small>
+                SCHOOL EDUCATION
+            </small>
+
+            <h3>
+                Higher Secondary Education
+            </h3>
+
+            <p>
+                School education details can be added here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section class="dark-section" id="certificates">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            06 — CERTIFICATIONS
+        </div>
+
+        <h2>
+            Courses & certificates
+        </h2>
+
+        <p>
+            Certifications, courses and professional learning.
+        </p>
+
+    </div>
+
+
+    <div class="certificate-grid">
+
+
+        <div class="certificate-card">
+
+            <h3>
+                Digital Marketing Certification
+            </h3>
+
+            <p>
+                Certification details can be added here.
+            </p>
+
+            <a href="#">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="certificate-card">
+
+            <h3>
+                Google Ads Certification
+            </h3>
+
+            <p>
+                Certification details can be added here.
+            </p>
+
+            <a href="#">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+        <div class="certificate-card">
+
+            <h3>
+                Future Certification
+            </h3>
+
+            <p>
+                More certifications can be added here.
+            </p>
+
+            <a href="#">
+                View Certificate →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RESUME
+===================================================== -->
+
+<section id="resume">
+
+<div class="container">
+
+    <div class="resume-box">
+
+        <div>
+
+            <div class="small-label">
+                RESUME
+            </div>
+
+            <h2>
+                Want to know more about me?
+            </h2>
+
+            <p>
+                View or download my latest resume.
+            </p>
+
+        </div>
+
+
+        <a href="#" class="btn btn-primary">
+            View Resume
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="dark-section contact" id="contact">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="section-number">
+            07 — CONTACT
+        </div>
+
+        <h2>
+            Let's connect
+        </h2>
+
+        <p>
+            Open to opportunities, collaborations and new experiences.
+        </p>
+
+    </div>
+
+
+    <p class="contact-text">
+
+        Feel free to connect with me through any of the platforms below.
+
+    </p>
+
+
+    <div class="contact-links">
+
+        <a href="mailto:your@email.com">
+            Email
+        </a>
+
+        <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="https://github.com/" target="_blank">
+            GitHub
+        </a>
+
+        <a href="#">
+            WhatsApp
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer-inner">
+
+    <p>
+        © 2026 Your Name. All rights reserved.
+    </p>
+
+    <a href="#home">
+        Back to top ↑
+    </a>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
